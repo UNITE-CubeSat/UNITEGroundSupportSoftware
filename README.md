@@ -48,7 +48,7 @@ $sudo ./UNITEGroundSupportSoftware/run.sh
 After starting the script, follow these steps:
 
 1. Make sure that each Arduino is plugged into the RPi 3.
-   The default ports are __/dev/ttyACM0__ and __/dev/ttyACM1__ but can be altered in the run.sh script and the __*Logger.py__ files.
+   The default ports are __/dev/ttyACM0__ and __/dev/ttyACM1__ but can be altered in the __run.sh__ script and the __*Logger.py__ files.
 
 2. The startup script will ask you for the working directory which will just be the repository directory.
 
