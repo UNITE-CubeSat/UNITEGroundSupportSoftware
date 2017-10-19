@@ -47,11 +47,12 @@ $sudo ./UNITEGroundSupportSoftware/run.sh
 
 After starting the script, follow these steps:
 
-1. Make sure that each Arduino is plugged into the RPi 3. The default ports are /dev/ttyACM0 and /dev/ttyACM1 but can be altered in the run.sh script and the *Logger.py files.
+1. Make sure that each Arduino is plugged into the RPi 3.
+   The default ports are __/dev/ttyACM0__ and __/dev/ttyACM1__ but can be altered in the run.sh script and the __*Logger.py__ files.
 
 2. The startup script will ask you for the working directory which will just be the repository directory.
 
-```
+```bash
 Starting Ground Test Software
 
 Please drag your testing directory into the terminal and press enter
@@ -62,14 +63,14 @@ Please drag your testing directory into the terminal and press enter
 
 3. Make a backup. If you have run the script before, it will ask if you want to backup the current data to a timestamped folder.
 
-```
+```bash
 # Enter 'y' if you want to make a backup or 'n' if you want to overwrite the current data logs
 Would you like to save a backup of the current $LOGDIR directory? (y/n)
 ```
 
 4. Give each Arduino permission to read from the USB Serial Port.
 
-```
+```bash
 Update Arduino permissions...
 
 [username]: {password_here}
@@ -77,7 +78,7 @@ Update Arduino permissions...
 
 5. Program each Arduino with its corresponding Arduino script found in the Arduino subdirectory.
 
-```
+```bash
 # Program the Arduino on port PORT_NAME with ARDUINO_SCRIPT using the ARDUINO IDE
 # If it has been programmed, enter y and continue
 Has Arduino on port {PORT_NAME} been programmed with '{ARDUINO_SCRIPT}' ? (y/n)
@@ -85,7 +86,7 @@ Has Arduino on port {PORT_NAME} been programmed with '{ARDUINO_SCRIPT}' ? (y/n)
 
 6. Give both python logging scripts permission to run
 
-```
+```bash
 # Two different terminal windows will pop up asking for login password
 [username]: {password_here}
 ```
@@ -105,11 +106,6 @@ Diagnostic Logger started...
 ```
 
 The end result of the run.sh script will have two terminal windows open that will print out any data that comes through the Arduinos from the satellite.
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
-
 
 ## Contributing
 
