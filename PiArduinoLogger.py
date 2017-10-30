@@ -7,41 +7,41 @@ def Parse(Data):
 
 	print(Data[11]);
 	
-	if((int(Data[11]) == 1) and (str(Data[2]) != "F")):
+	if((int(Data[11]) == 1) and (str(Data[13]) != "F")):
 		f = open(directory + "/LP.txt","a") #Opens file in (a) append mode
 		f.write(str(Data[11:]))					
 		f.close();
 		print("LP file altered\n")
 	
-	elif((int(Data[11]) == 2) and (str(Data[1]) == ",")):
+	elif((int(Data[11]) == 2) and (str(Data[13]) == ",")):
 		f = open(directory + "/Mag.txt","a") #Opens file in (a) append mode
 		f.write(str(Data[11:]))					
 		f.close();		
 
 		print("Mag file altered\n")
 
-	elif((int(Data[11]) == 3) and (str(Data[1]) == ",")):
+	elif((int(Data[11]) == 3) and (str(Data[13]) == ",")):
 		f = open(directory + "/Temp.txt","a") #Opens file in (a) append mode
 		f.write(str(Data[11:]))				
 		f.close();			
 
 		print("Temp file altered\n");
 	   
-	elif((int(Data[11]) == 4) and (str(Data[1]) == ",")):
+	elif((int(Data[11]) == 4) and (str(Data[13]) == ",")):
 		f = open(directory + "/GPS.txt","a") #Opens file in (a) append mode
 		f.write(str(Data[11:]))					
 		f.close();			
 	
 		print("GPS file altered\n")
 	
-	elif((int(Data[11]) == 5) and (str(Data[1]) == ",")):
+	elif((int(Data[11]) == 5) and (str(Data[13]) == ",")):
 		f = open(directory + "/HK.txt","a") #Opens file in (a) append mode
 		f.write(str(Data[11:]))					
 		f.close();			
 		
 		print("Houskeeping file altered\n")
 	
-	elif((int(Data[11]) == 6) and (str(Data[1]) == ",")):
+	elif((int(Data[11]) == 6) and (str(Data[13]) == ",")):
 		f = open(directory + "/LPCal.txt","a") #Opens file in (a) append mode
 		f.write(str(Data[11:]))		
 		f.close();
