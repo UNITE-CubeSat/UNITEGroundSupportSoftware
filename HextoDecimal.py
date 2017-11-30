@@ -51,8 +51,8 @@ def main():
     flat_list = getFile()
     ConvertedList = [] #This is the list of data from HEX to Decimal
     
-    Name =  GetInstrument(); 
-    print(Name)
+    #Name =  GetInstrument(); 
+    #print(Name)
     ConvertedList =  convert(flat_list)
     save_Data_File(ConvertedList)
 
