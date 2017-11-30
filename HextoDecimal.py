@@ -1,13 +1,31 @@
 import Tkinter, tkFileDialog
 import csv 
+from Tkinter import *
 
-def convert(flat_list): #This is a mess
+#def langmuir():
+#def magnetometer():
+#def temp():
+def GetInstrument():
+    Instrument = raw_input("Type the letter of your subsystem  T(Temp), M(Mag), L(Langmuir), G(GPS) \n")
+    return Instrument
+def getFile():
+    flat_list = []
+    root = Tkinter.Tk()
+    root.withdraw()
+    path =tkFileDialog.askopenfile()
+    data = csv.reader(path)
+    l = list(data)
+    for sublist in l:
+        for item in sublist:
+            flat_list.append(item)
+    flat_list =filter(None,flat_list)
+    return flat_list
+def convert(flat_list): #This function converts the data from hex to decimal
 
     ReturnList = []
-#This iterates the raw data, converts it and places into a new array (immuatabe)
     for i in range(len(flat_list)):
         ReturnList.append(int(flat_list[i],16))
-    save_Data_File(ReturnList)
+    return ReturnList
 
 def save_Data_File(ReturnList):
     
@@ -15,6 +33,7 @@ def save_Data_File(ReturnList):
     if fname is None:
         return
     i = 0
+#This formats the temperature data in an 8 column format
     for x in range(len(ReturnList)):
         if(i<8):
             fname.write(str(ReturnList[x]))
@@ -27,26 +46,15 @@ def save_Data_File(ReturnList):
             i=1
     fname.close
     print("File has been saved")
-def main():
-#The Tkinter is a standard library for basic GUI
-    root = Tkinter.Tk()
-    root.withdraw() #This bit stops the tkinter root window from showing, more of formality, you don't want to see
-                    #this, it is ugly
-    path = tkFileDialog.askopenfile()#This prompts the user to point at the file they want to choose to convert
-        
-    data =csv.reader(path)
-    
-    l = list(data)# For whatever reason this makes a list of list, it is annoying
-    
-    flat_list = [] #This is to be the data that needs to be converted, after it has been flattened
 
-#This takes a list of list and places it into a list that isn't a list of list
-    for sublist in l:
-        for item in sublist:
-            flat_list.append(item)
+def main():
+    flat_list = getFile()
+    ConvertedList = [] #This is the list of data from HEX to Decimal
     
-    flat_list = filter(None,flat_list) #This filters the list of blank spaces
-    
-    convert(flat_list)
+    Name =  GetInstrument(); 
+    print(Name)
+    ConvertedList =  convert(flat_list)
+    save_Data_File(ConvertedList)
+
 if __name__ == "__main__":
     main()
