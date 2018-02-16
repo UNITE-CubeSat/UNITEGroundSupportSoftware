@@ -19,9 +19,10 @@ void loop() {
   if (Serial2.available()) {
     Serial2.readBytes(simplexPackage, 43);
 
-    for (int i = 0; i < 42; i++) {
+    for (int i = 0; i < 43; i++) {
       Serial.print(simplexPackage[i], HEX);
       Serial.print(",");
+      simplexPackage[i] = 0;
     }
     Serial.println();
     Serial.print("Simplex -> Pic");

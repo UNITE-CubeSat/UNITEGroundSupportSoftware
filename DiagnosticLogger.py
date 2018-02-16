@@ -13,20 +13,28 @@ def main():
 
 	while(1):
 	
-		lengthOfLog = ser.inWaiting()
+		line = str(ser.readline())
+
+		if((len(line) == 0) or (str(line[0]) == ",") or (line[0] == None) or (len(line) < 10)):
+			line = 0;
+		else:
+			print line
+			
+
+		#lengthOfLog = ser.inWaiting()
 		
-		if (lengthOfLog > 0):
-			line = str(ser.readline())
-			print(line)
+		#if (lengthOfLog > 0):
+			#line = str(ser.readline())
+			#print(line)
 
 			if (("47,55," in line) or ("Pic" in line)):
 				duplexFile = open(directory + '/DuplexComm.txt','a')
 				duplexFile.write(line)
 				duplexFile.close()
 			else :
-				logFile = open(directory + '/Diagnostic_Logs/DiagData_' + str(logNum) + '.log', 'a')
-				logFile.write(line)
-				logFile.close()			
+				#logFile = open(directory + '/Diagnostic_Logs/DiagData_' + str(logNum) + '.log', 'a')
+				#logFile.write(line)
+				#logFile.close()			
 
 				if "EOF" in line: 
 					print("Logged " + str(logNum) + " Files")

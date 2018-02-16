@@ -59,10 +59,11 @@ def main():
 	while(1):	
 				
 		Data = ser.readline().encode()
-		print Data
+		
 		if((len(Data) == 0) or (str(Data[0]) == ",") or (Data[0] == None) or (len(Data) < 10)):
 			Data = 0;
 		else:
+			print Data
 			if (str(Data[9]) == "C"): Parse(Data);
 			else: Data = 0;
 			

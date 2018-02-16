@@ -19,6 +19,15 @@ void loop() {
   // Diagnostic Logs
   if (Serial1.available()) {
 
+
+//    byte diagLog[39];
+//    Serial1.readBytesUntil('\n',diagLog,39);
+//
+//    for (int i = 0; i < sizeof(diagLog); i++) {
+//      Serial.print(diagLog[i],HEX);
+//      Serial.print(", ");
+//    }
+//    Serial.println();
     String diagLog = Serial1.readStringUntil('\n');
     Serial.println(diagLog);
     
@@ -45,6 +54,7 @@ void loop() {
     Serial.println();
     Serial.print("Pic -> Duplex");
     Serial.println();
+
 
   }
 
