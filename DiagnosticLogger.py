@@ -32,9 +32,9 @@ def main():
 				duplexFile.write(line)
 				duplexFile.close()
 			else :
-				#logFile = open(directory + '/Diagnostic_Logs/DiagData_' + str(logNum) + '.log', 'a')
-				#logFile.write(line)
-				#logFile.close()			
+				logFile = open(directory + '/Diagnostic_Logs/DiagData_' + str(logNum) + '.log', 'a')
+				logFile.write(line)
+				logFile.close()			
 
 				if "EOF" in line: 
 					print("Logged " + str(logNum) + " Files")
