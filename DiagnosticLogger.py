@@ -15,7 +15,7 @@ def main():
 	
 		line = str(ser.readline())
 
-		if((len(line) == 0) or (str(line[0]) == ",") or (line[0] == None) or (len(line) < 10)):
+		if((len(line) == 0) or (str(line[0]) == ",") or (line[0] == None) or (len(line) < 3)):
 			line = 0;
 		else:
 			print line
