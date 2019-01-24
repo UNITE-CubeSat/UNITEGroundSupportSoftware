@@ -29,7 +29,7 @@ You can install this software using git:
 
 First, clone the repository into your desired directory
 ```
-$cd /fill_your_directory_path_here
+$cd /path_to_dir
 $git clone https://github.com/UNITE-CubeSat/UNITEGroundSupportSoftware.git
 ```
 
@@ -58,7 +58,7 @@ Starting Ground Test Software
 Please drag your testing directory into the terminal and press enter
 
 # Drag the UNITEGroundSupportSoftware folder below
-{/path_to_directory/}
+{/path_to_dir/}
 ``` 
 
 3. Make a backup. If you have run the script before, it will ask if you want to backup the current data to a timestamped folder.
